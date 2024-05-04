@@ -1,7 +1,7 @@
 name: parayada_ui_collection
 description: "A new Flutter UI package to consolidate all usefull widgets"
 version: 0.0.1
-homepage: "Afeef iamafeefkk@gmail.com"
+homepage:
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
