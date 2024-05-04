@@ -1,39 +1,60 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+```markdown
+# parayada_ui_collection
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A comprehensive collection of UI components for Flutter applications.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Easy to Use:** Simplified API for quick integration into your project.
+- **Customizable:** Designed to be easily styled to match your branding.
+- **Responsive:** Adaptive layouts for mobile, tablet, and desktop.
 
-## Getting started
+## Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use the `parayada_ui_collection` package in your Flutter app, add it to your dependencies in the `pubspec.yaml`:
+
+```yaml
+dependencies:
+  parayada_ui_collection: ^0.0.1
+```
+
+Then run:
+
+```shell
+flutter pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package in your Dart code:
 
 ```dart
-const like = 'sample';
+import 'package:parayada_ui_collection/duolingo/button.dart'
 ```
 
-## Additional information
+Here's a simple example to use a Duolingo button from the package:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+Widget build(BuildContext context) {
+  return DuolingoButton(child: const Text('Check'), onPressed: () {})
+}
+```
+
+## Contributing
+
+Contributions are welcome! Please read the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+- [Afeef K K](your-website.com)
+
+## Acknowledgments
+
+- Thanks to all the contributors who have helped to make this package better.
+
+```
