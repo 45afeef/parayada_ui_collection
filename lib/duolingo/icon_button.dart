@@ -84,11 +84,12 @@ class _DuolingoState extends State<DuolingoIconButton>
       onTapDown: (_) async {
         HapticFeedback.heavyImpact();
         // _audioPlayer.play(AssetSource('sounds/click_1.mp3'));
-        _controller.forward();
-      }, // Start the animation
+        _controller.forward(); // Start the animation
+      },
       onTapUp: (_) {
-        _controller.reverse(); // Reverse the animation
-        widget.onPressed();
+        _controller
+            .reverse() // Reverse the animation
+            .whenComplete(widget.onPressed); // Execute the onPressed function
       },
       onTapCancel: () => _controller.reverse(),
       onLongPress: widget.onLongPress,

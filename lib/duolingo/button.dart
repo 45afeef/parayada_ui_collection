@@ -79,11 +79,12 @@ class _DuolingoState extends State<DuolingoButton>
     return GestureDetector(
       onTapDown: (_) async {
         HapticFeedback.heavyImpact();
-        _controller.forward();
-      }, // Start the animation
+        _controller.forward(); // Start the animation
+      },
       onTapUp: (_) {
-        _controller.reverse(); // Reverse the animation
-        widget.onPressed();
+        _controller
+            .reverse() // Reverse the animation
+            .whenComplete(widget.onPressed); // Execute the onPressed function
       },
       onTapCancel: () => _controller.reverse(),
       onLongPress: widget.onLongPress,
