@@ -1,28 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tinycolor2/tinycolor2.dart';
 
 class DuolingoButton extends StatefulWidget {
   final Color color; // Button color
   final Widget child; // Button text
   final Offset elevation; // Shadow elevation
   final Offset clickedStateElevation; // Shadow elevation
-  final Color shadowColor; // Shadow color
+  final Color? shadowColor; // Shadow color
   final VoidCallback onPressed; // Tap callback
   final VoidCallback? onLongPress; // Long press callback
   final Curve curve; // Animation curve
   final BorderRadiusGeometry radius; // Border Radius
+  final BoxBorder? border; //
+  final double borderWidth;
+  final EdgeInsetsGeometry? padding;
 
   const DuolingoButton({
     super.key,
     required this.child,
     required this.onPressed,
     this.onLongPress,
-    this.color = Colors.green,
+    this.color = Colors.yellow,
     this.elevation = const Offset(0, 8),
     this.clickedStateElevation = const Offset(0, 0),
-    this.shadowColor = const Color(0xFF1B5E20),
+    this.shadowColor, // = const Color(0xFF1B5E20),
     this.curve = Curves.easeInOut,
     this.radius = const BorderRadius.all(Radius.circular(16)),
+    this.border,
+    this.borderWidth = 0,
+    this.padding = const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
   });
 
   @override
@@ -88,15 +95,21 @@ class _DuolingoState extends State<DuolingoButton>
           decoration: BoxDecoration(
             color: widget.color,
             borderRadius: widget.radius,
+            border: widget.border ??
+                Border.all(
+                  color: TinyColor.fromColor(widget.color).lighten(15).color,
+                  width: widget.borderWidth,
+                ),
             boxShadow: [
               BoxShadow(
-                color: widget.shadowColor,
+                color: widget.shadowColor ??
+                    TinyColor.fromColor(widget.color).darken(25).color,
                 offset: _shadowAnimation
                     .value, // Use the animated value for the shadow offset
               ),
             ],
           ),
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 40),
+          padding: widget.padding,
           child: widget.child,
         ),
       ),
