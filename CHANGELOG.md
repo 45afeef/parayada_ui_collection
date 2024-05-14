@@ -1,3 +1,26 @@
+## 0.0.2
+
+# Changelog
+
+Made the shadow color dyanamic, Colors are now created by lightining for border and darkening the base color for shadow automatically using TinyColor package.
+
+Made padding,border and border width dynamic for both DuolingoButton and DuolingoIconButton
+
+## [Unreleased]
+
+### Added
+- `tinycolor2` package
+### Changed
+- padding,border and border width is now customizable
+### Deprecated
+- 
+### Removed
+- 
+### Fixed
+- 
+
+
+
 ## 0.0.1
 
 # Changelog

@@ -16,7 +16,7 @@ To use the `parayada_ui_collection` package in your Flutter app, add it to your 
 
 ```yaml
 dependencies:
-  parayada_ui_collection: ^0.0.1
+  parayada_ui_collection: ^0.0.2
 ```
 
 Then run:
